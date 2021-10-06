@@ -1,6 +1,5 @@
 # Pipeline-Parallel-MNN-Tree
 
-### Contact 
 This repository contains the code for paper "Efficient Computer Vision on Edge Devices with Pipeline-Parallel Hierarchical Neural Networks" (ASPDAC 2022).
 
 ## Usage
