@@ -13,7 +13,6 @@ import shutil
 import os
 import argparse
 #import vgg
-from utils import progress_bar
 import pdb
 from collections import OrderedDict
 

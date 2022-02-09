@@ -12,7 +12,6 @@ import numpy as np
 import shutil
 import os
 import argparse
-from utils import progress_bar
 import pdb
 from collections import OrderedDict
 
