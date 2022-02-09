@@ -23,7 +23,7 @@ def test(valloader):
         count1+=1
         path_taken = []
         model = getattr(svhn, "get_root_model")()
-        #model.load_state_dict(torch.load('models/root.pth', map_location=torch.device('cpu')))
+        model.load_state_dict(torch.load('models/root.pth', map_location=torch.device('cpu')))
         while 1:
             model.eval()
             data, net_out = model(data)
@@ -33,7 +33,7 @@ def test(valloader):
                 break
             next_dnn = paths[tuple(path_taken)]
             model = getattr(svhn, "get_"+next_dnn+"_model")()
-            #model.load_state_dict(torch.load('models/'+next_dnn+'.pth', map_location=torch.device('cpu')))
+            model.load_state_dict(torch.load('models/'+next_dnn+'.pth', map_location=torch.device('cpu')))
         times.append(time.time() - start)
         if count1 >= 100:
             print(times)
@@ -47,7 +47,6 @@ args = parser.parse_args()
 transform = transforms.Compose(
         [
             transforms.ToTensor(),
-            transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ]
     )
 testset = datasets.ImageFolder(root=args.data, transform=transform)

@@ -19,7 +19,7 @@ import svhn
 def process_data():
     if args.index == 1:
         for frame_number, (image, label) in enumerate(testloader):
-            print("\n\nnew image: ", label)
+            print("\n\nnew image: ", label.item())
             current_DNN = 'root'
             model = models[current_DNN]
             model.eval()
@@ -101,11 +101,10 @@ if args.index == 1:
     transform = transforms.Compose(
         [
             transforms.ToTensor(),
-            transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ]
     )
     testset = datasets.ImageFolder(root=args.data, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=1, shuffle=False)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=1, shuffle=True)
     print("Press Enter when all devices are ready: ")
     _ = input()
 
