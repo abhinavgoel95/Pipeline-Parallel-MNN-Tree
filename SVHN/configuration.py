@@ -5,6 +5,7 @@ class configuration:
 		self.assignments = {
 			2: [['root'], ['SG1', 'SG2']],
 			3: [['root'], ['SG1'], ['SG2']],
+			4: [['root'], ['root'], ['SG1'], ['SG2']],
 		}
 
 		self.nodes = ['root', 'SG1', 'SG2']
